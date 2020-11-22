@@ -1,0 +1,122 @@
+header
+	//display: flex
+	//flex-direction: column
+	.firstLine
+		padding-top: 20px
+		display: flex
+		justify-content: space-between
+		&__contacts
+			flex: 0 0 250px
+			padding: 0 10px
+			text-align: center
+			font-size: 1.1rem
+			color: $text-color-dark
+			animation: shadow  5s infinite ease-in-out
+		&__logo	
+			flex: 1 0 250px
+			transform-style: preserve-3d
+			perspective: 100px
+			perspective-origin: center center 
+			color: $text-color-dark
+			div
+				display: inline-block
+				height: 100%
+				width: 49%
+				text-align: right
+				font-size: 4rem
+				line-height: 4rem
+				transform: rotateX(40deg)
+			
+				animation: logo 2s 1 linear
+			& :last-child
+				text-align: left
+		&__networks
+			flex: 0 0 250px
+			display: flex
+			align-items: center
+			justify-content: center 
+			//border: 1px solid black
+			button
+				margin: 2px
+				padding: 0
+				height: 42px
+				width: 42px
+				background-color: $text-color-dark
+				border: none
+				
+											
+				a
+					display: flex
+					align-items: center	
+					justify-content: center					
+					width: 100%
+					height: 100%
+					.fa
+						color: $text-color-light
+						font-size: 2.2rem
+						&:hover					
+							color: $bg-color-light
+					
+					//background: url(../src/images/social-network.png) no-repeat
+					//background-size: 300%
+				//.instagram
+					//background-position: 0 -37px
+				//.vk
+					//background-position: -40px -37px
+				//.telegram
+					//background-position: -80px -73px
+				//.ok
+					//background-position: 80px 73px
+					
+	.menu
+		margin-top: 20px
+		background-color: rgba($bg-color-dark, 0.8)
+		text-transform: uppercase
+		font-size: 1.2rem
+		ul
+			margin: 0
+			padding: 0
+			display: flex
+			justify-content: center
+			list-style-type: none			
+			li
+				position: relative
+				a
+					display: block
+					margin: 0 3px
+					padding: 10px
+					border-radius: 10px
+					&:hover
+						background-color: darken($bg-color-dark, 10%)
+				//border: 1px solid black
+				
+				ul					
+					position: absolute
+					display: flex
+					//display: none
+					
+					flex-direction: column
+					z-index: 9999
+					li
+						background-color: rgba($bg-color-dark, 0.8)
+					
+						
+
+@keyframes shadow
+	from
+		text-shadow: 0 0 3px $text-color-dark
+	50%
+		text-shadow: 0 0 30px $text-color-dark
+	to
+		text-shadow: 0 0 3px $text-color-dark
+		
+		
+@keyframes logo
+	from
+		transform: rotateX(40deg) scale3d(0,0,0)
+	75%
+		transform: rotateX(40deg) scale3d(1.1,1.1,1.1)
+	to
+		transform: rotateX(40deg) scale3d(1,1,1)
+		
+
