@@ -6,6 +6,7 @@ abstract class BaseController
 	protected $get;
 	protected $post;
 	protected $session;
+	protected $server;
 
 	protected function __construct()
 	{

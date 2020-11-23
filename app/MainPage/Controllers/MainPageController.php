@@ -31,6 +31,19 @@ class MainPageController extends BaseController
 		]);	
 	}
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 	public function setCalibration()
 	{
 		$dt = htmlspecialchars(trim($this->post['dt']));
