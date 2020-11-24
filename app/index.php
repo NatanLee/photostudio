@@ -6,56 +6,38 @@ spl_autoload_register(function ($className){
 // Код роутера
 use Base\Controllers\BaseController;
 class uSitemap extends BaseController{
-    public $path;
-    public $params;
-    public $classname; 
+    public $query;    
+    public $path; 
     public $request_uri;
    
     function __construct() {
+		parent::__construct();
         $this->mapClassName();
     }
  
     function mapClassName() {
- 
-        $this->classname = '';
-        $this->path = '';
-        $this->params;
- 
-       
         $this->request_uri = parse_url($_SERVER['REQUEST_URI']);
-				$this->path = explode('/', $this->request_uri['path']);
-				$this->get = $this->request_uri['query'];
-       
-var_dump($this->get);
-       
-
-      	$this->loadPage();		
-			
-    }
+		$this->path = $this->request_uri['path'];
+		$this->query = $this->request_uri['query'];
+		$load = $this->getRoute()[$this->path]['controller'];
+		$load->{$this->getRoute()[$this->path]['action']}();	
+		var_dump($this->getRoute()[$this->path]['action']);
 		
-		function loadPage(){
-			var_dump('hello');
+	function getRoute(){
+		return[
+			'/'=>[
+				'controller'=>new MainPage\Controllers\MainPageController(),
+				'action'=>'getPage',
+				'method'=>'get'
+			],
+			'/price'=>[
+				'controller'=>'PriceController',
+				'action'=>'getPage',
+				'method'=>'get'
+			]
 			
-	
-			$load = new MainPage\Controllers\MainPageController();
-			$load->getPage();	
-		}
-		
-		function getRoute(){
-			return[
-				'/'=>[
-					'controller'=>'MainPageController',
-					'action'=>'getPage',
-					'method'=>'GET'
-				]
-				'/price'=>[
-					'controller'=>'PriceController',
-					'action'=>'getPage',
-					'method'=>'GET'
-				]
-				
-			];
-		}
+		];
+	}
 }
 $sm = new uSitemap();
 
