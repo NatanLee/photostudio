@@ -42,7 +42,7 @@
 				<li class = "toggleMenu toggledMenu1"><a href="#">Аренда</a>
 					<ul class = "hidden" id = "toggledMenu1">						
 						<li><a href = "index.php?price">Стоимость</a></li>
-						<li><a href = "index.php?rooms">Залы</a></li>
+						<li><a href = "/allrooms">Залы</a></li>
 						<li><a href = "#">Оборудование</a></li>
 						<li><a href = "#">Правила</a></li>
 						<li><a href = "#">Акции</a></li>

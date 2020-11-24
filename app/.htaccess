@@ -8,3 +8,5 @@ RewriteCond %{REQUEST_FILENAME} !-d
 # L означает Last, нужен чтобы на этом этапе mod_rewrite сразу остановил работу.
 # Короче, небольшое увеличение производительности.
 RewriteRule ^(.*)$ index.php?url_param=$1 [L,QSA]
+
+Options All -Indexes

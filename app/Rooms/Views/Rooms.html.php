@@ -8,7 +8,7 @@
 			</div>
 			<div class = "roomlist__cover">
 				<p><?=$room['roomName']?><p>
-				<a href = "index.php?room_details=<?=$room['folderName']?>">Подробнее</a>
+				<a href = "/allrooms/room=<?=$room['folderName']?>">Подробнее</a>
 			</div>
 		</div>
 		<?endforeach;?>

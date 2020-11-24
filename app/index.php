@@ -6,34 +6,37 @@ spl_autoload_register(function ($className){
 // Код роутера
 use Base\Controllers\BaseController;
 class uSitemap extends BaseController{
-    public $query;    
-    public $path; 
-    public $request_uri;
-   
-    function __construct() {
-		parent::__construct();
-        $this->mapClassName();
-    }
+	public $query;    
+	public $path; 
+	public $request_uri;
  
-    function mapClassName() {
-        $this->request_uri = parse_url($_SERVER['REQUEST_URI']);
+	function __construct() {
+	parent::__construct();
+			$this->mapClassName();
+	}
+
+	function mapClassName() {
+		$this->request_uri = parse_url($_SERVER['REQUEST_URI']);
 		$this->path = $this->request_uri['path'];
 		$this->query = $this->request_uri['query'];
 		$load = $this->getRoute()[$this->path]['controller'];
-		$load->{$this->getRoute()[$this->path]['action']}();	
-		var_dump($this->getRoute()[$this->path]['action']);
-		
+		$load->{$this->getRoute()[$this->path]['action']}();
+		$this->get = $this->query;
+		var_dump($this->path);
+	}	
 	function getRoute(){
 		return[
 			'/'=>[
 				'controller'=>new MainPage\Controllers\MainPageController(),
-				'action'=>'getPage',
-				'method'=>'get'
+				'action'=>'getPage'
 			],
-			'/price'=>[
-				'controller'=>'PriceController',
-				'action'=>'getPage',
-				'method'=>'get'
+			'/allrooms'=>[
+				'controller'=>new Rooms\Controllers\RoomsController(),
+				'action'=>'getRooms'
+			],
+			'/allrooms/room'=>[
+				'controller'=>new Rooms\Controllers\RoomsController(),
+				'action'=>'getOneRoom'
 			]
 			
 		];
