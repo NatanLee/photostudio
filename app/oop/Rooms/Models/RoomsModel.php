@@ -1,5 +1,5 @@
 <?php
-namespace Rooms\Models;
+namespace oop\Rooms\Models;
 
 class RoomsModel
 {

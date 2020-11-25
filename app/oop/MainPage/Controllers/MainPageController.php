@@ -1,8 +1,8 @@
 <?php
-namespace MainPage\Controllers;
+namespace oop\MainPage\Controllers;
 
-use Base\Controllers\BaseController;
-use MainPage\Models\MainPageModel;
+use oop\Base\Controllers\BaseController;
+use oop\MainPage\Models\MainPageModel;
 
 class MainPageController extends BaseController
 {	
@@ -25,7 +25,7 @@ class MainPageController extends BaseController
 		$MainPageModel = new MainPageModel();
 		$imgFolders = $MainPageModel->getFolders();
 //echo '<pre>';var_dump($imgFolders);		
-		echo $this->fullRender('MainPage/Views/MainPage.html.php',[
+		echo $this->fullRender('oop/MainPage/Views/MainPage.html.php',[
 			'title'=>'Фотостудия "Название". Аренда фотостудии в Щучье',
 			'imgFolders'=>$imgFolders		
 		]);	

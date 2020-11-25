@@ -1,5 +1,5 @@
 <?php
-namespace Base\Controllers;
+namespace oop\Base\Controllers;
 
 abstract class BaseController
 {
@@ -39,10 +39,10 @@ abstract class BaseController
 		ob_start();
 		extract($values);		
 		//echo $this->pageTop();
-		include('Base/Views/header.html.php');
+		include('oop/Base/Views/header.html.php');
 		include($filename);
 		//echo $this->pageBottom();
-		include('Base/Views/footer.html.php');
+		include('oop/Base/Views/footer.html.php');
 		return ob_get_clean();
 	}
 	

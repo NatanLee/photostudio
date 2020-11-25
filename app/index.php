@@ -4,7 +4,7 @@ spl_autoload_register(function ($className){
 	include_once str_replace("\\", "/", $className).'.php';				
 });
 // Код роутера
-use Base\Controllers\BaseController;
+use oop\Base\Controllers\BaseController;
 class uSitemap extends BaseController{
 	public $query;    
 	public $path; 
@@ -12,7 +12,7 @@ class uSitemap extends BaseController{
  
 	function __construct() {
 	parent::__construct();
-			$this->mapClassName();
+		$this->mapClassName();
 	}
 
 	function mapClassName() {
@@ -27,15 +27,15 @@ class uSitemap extends BaseController{
 	function getRoute(){
 		return[
 			'/'=>[
-				'controller'=>new MainPage\Controllers\MainPageController(),
+				'controller'=>new oop\MainPage\Controllers\MainPageController(),
 				'action'=>'getPage'
 			],
 			'/allrooms'=>[
-				'controller'=>new Rooms\Controllers\RoomsController(),
+				'controller'=>new oop\Rooms\Controllers\RoomsController(),
 				'action'=>'getRooms'
 			],
 			'/allrooms/room'=>[
-				'controller'=>new Rooms\Controllers\RoomsController(),
+				'controller'=>new oop\Rooms\Controllers\RoomsController(),
 				'action'=>'getOneRoom'
 			]
 			

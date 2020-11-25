@@ -1,8 +1,8 @@
 <?php
-namespace Rooms\Controllers;
+namespace oop\Rooms\Controllers;
 
-use Base\Controllers\BaseController;
-use Rooms\Models\RoomsModel;
+use oop\Base\Controllers\BaseController;
+use oop\Rooms\Models\RoomsModel;
 
 class RoomsController extends BaseController
 {	
@@ -23,7 +23,7 @@ class RoomsController extends BaseController
 	public function getRooms(){
 		$mRoomsModel = new RoomsModel();
 		$rooms = $mRoomsModel->getRoomsInfo();
-		echo $this->fullRender('Rooms/Views/Rooms.html.php',[
+		echo $this->fullRender('oop/Rooms/Views/Rooms.html.php',[
 			'title'=>'Выбор зала для фотосессии',
 			'rooms'=>$rooms
 		]);	
@@ -33,7 +33,7 @@ class RoomsController extends BaseController
 		$mRoomsModel = new RoomsModel();
 		$room = $mRoomsModel->getRoomImages($this->get['room_details']);
 //var_dump($room);
-		echo $this->fullRender('Rooms/Views/Room.html.php',[
+		echo $this->fullRender('oop/Rooms/Views/Room.html.php',[
 			'title'=>'Зал для фотосессии "'.$room['roomName'].'"',
 			'room'=>$room
 		]);	

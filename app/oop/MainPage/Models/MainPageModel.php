@@ -1,5 +1,5 @@
 <?php
-namespace MainPage\Models;
+namespace oop\MainPage\Models;
 
 class MainPageModel
 {
