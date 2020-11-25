@@ -1,6 +1,4 @@
 header
-	//display: flex
-	//flex-direction: column
 	.firstLine
 		padding-top: 20px
 		display: flex
@@ -21,15 +19,12 @@ header
 			div
 				display: inline-block
 				height: 100%
-				width: 49%
-				text-align: right
+				width: 100%
+				text-align: center
 				font-size: 4rem
 				line-height: 4rem
-				transform: rotateX(40deg)
-			
-				animation: logo 2s 1 linear
-			& :last-child
-				text-align: left
+				transform: rotateX(40deg)			
+				animation: logo 2s 1 linear			
 		&__networks
 			flex: 0 0 250px
 			display: flex
@@ -100,7 +95,6 @@ header
 					li
 						background-color: rgba($bg-color-dark, 0.8)
 					
-						
 
 @keyframes shadow
 	from
@@ -118,5 +112,24 @@ header
 		transform: rotateX(40deg) scale3d(1.1,1.1,1.1)
 	to
 		transform: rotateX(40deg) scale3d(1,1,1)
-		
 
+		
+@media screen and (max-width: 830px)
+	header
+		.firstLine
+			flex-wrap: wrap
+			justify-content: space-around
+			&__contacts
+			&__logo
+				flex: 0 0 250px
+				order: 3
+				//width: 80%
+			&__networks
+
+@media screen and (max-width: 420px)
+	header
+		.firstLine
+			&__logo
+				flex: 0 0 250px
+				div
+					font-size: 3rem

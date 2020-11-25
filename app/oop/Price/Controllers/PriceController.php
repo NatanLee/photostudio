@@ -1,8 +1,8 @@
 <?php
-namespace Price\Controllers;
+namespace oop\Price\Controllers;
 
-use Base\Controllers\BaseController;
-use Price\Models\PriceModel;
+use oop\Base\Controllers\BaseController;
+use oop\Price\Models\PriceModel;
 
 class PriceController extends BaseController
 {	
@@ -17,11 +17,10 @@ class PriceController extends BaseController
 	}
 //получить список всех
 	public function getPage()
-	{
-		
+	{		
 		$mPriceList = new PriceModel();
 		$priceList = $mPriceList->getPrices();
-		echo $this->fullRender('Price/Views/Price.html.php',[
+		echo $this->fullRender('oop/Price/Views/Price.html.php',[
 			'title'=>'Прайс-лист фотостудии',
 			'priceList'=>$priceList
 		]);	

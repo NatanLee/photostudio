@@ -3,7 +3,7 @@ namespace oop\Base\Controllers;
 
 abstract class BaseController
 {
-	protected $get;
+	public $get;
 	protected $post;
 	protected $session;
 	protected $server;
@@ -46,6 +46,10 @@ abstract class BaseController
 		return ob_get_clean();
 	}
 	
+/* 	public function setGet ($key, $value){
+		$this->get[$key] = $value;
+	} */
+	
 	protected function getRedirect($url){
 		header("Location: $url");
 		die;
@@ -54,5 +58,7 @@ abstract class BaseController
 	public function get404(){
 		
 	}
+	
+	
 
 }

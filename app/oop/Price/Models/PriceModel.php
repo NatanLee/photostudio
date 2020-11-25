@@ -1,5 +1,5 @@
 <?php
-namespace Price\Models;
+namespace oop\Price\Models;
 
 class PriceModel
 {
@@ -17,10 +17,10 @@ class PriceModel
 			
 			foreach ($files as $j => $file) {				
 				if (fnmatch("roomName.txt", $file)){
-					$prices[$i]['roomName'] = file_get_contents("./src/rooms/".$folder."/".$file);						
+					$prices[$i]['roomName'] = file_get_contents("src/rooms/".$folder."/".$file);						
 				}
 				if (fnmatch("roomPrice.txt", $file)){
-					$roomPrice = explode(' ', file_get_contents("./src/rooms/".$folder."/".$file));
+					$roomPrice = explode(' ', file_get_contents("src/rooms/".$folder."/".$file));
 					$prices[$i]['firstPrice'] = $roomPrice[0];
 					$prices[$i]['secondPrice'] = $roomPrice[1];						
 				}

@@ -18,11 +18,9 @@ class uSitemap extends BaseController{
 	function mapClassName() {
 		$this->request_uri = parse_url($_SERVER['REQUEST_URI']);
 		$this->path = $this->request_uri['path'];
-		$this->query = $this->request_uri['query'];
+		$this->query = $this->request_uri['query'];		
 		$load = $this->getRoute()[$this->path]['controller'];
-		$load->{$this->getRoute()[$this->path]['action']}();
-		$this->get = $this->query;
-		var_dump($this->path);
+		$load->{$this->getRoute()[$this->path]['action']}($this->query);
 	}	
 	function getRoute(){
 		return[
@@ -30,13 +28,17 @@ class uSitemap extends BaseController{
 				'controller'=>new oop\MainPage\Controllers\MainPageController(),
 				'action'=>'getPage'
 			],
-			'/allrooms'=>[
+			'/rooms'=>[
 				'controller'=>new oop\Rooms\Controllers\RoomsController(),
 				'action'=>'getRooms'
 			],
-			'/allrooms/room'=>[
+			'/rooms/room'=>[
 				'controller'=>new oop\Rooms\Controllers\RoomsController(),
-				'action'=>'getOneRoom'
+				'action'=>'getOneRoom'				
+			],
+			'/price'=>[
+				'controller'=>new oop\Price\Controllers\PriceController(),
+				'action'=>'getPage'				
 			]
 			
 		];

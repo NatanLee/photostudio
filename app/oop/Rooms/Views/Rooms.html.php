@@ -4,11 +4,11 @@
 		<?foreach($rooms as $room):?>
 		<div class = "roomlist__room">
 			<div class = "roomlist__image">
-				<img src="./src/rooms/<?=$room['folderName']?>/<?=$room['fileName']?>">
+				<img src="/src/rooms/<?=$room['folderName']?>/<?=$room['fileName']?>">
 			</div>
 			<div class = "roomlist__cover">
 				<p><?=$room['roomName']?><p>
-				<a href = "/allrooms/room=<?=$room['folderName']?>">Подробнее</a>
+				<a href = "/rooms/room?<?=$room['folderName']?>">Подробнее</a>
 			</div>
 		</div>
 		<?endforeach;?>

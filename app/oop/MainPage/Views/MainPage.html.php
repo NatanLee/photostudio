@@ -27,7 +27,7 @@
 		<div class="rooms__slider">
 			<ul class="slimSlider__list">
 			<?foreach($folder['folderFiles'] as $sliderImg):?>	
-				<li class="slimSlider__element"><img src=<?="./src/rooms/".$folder['folderName']."/".$sliderImg?>></li>
+				<li class="slimSlider__element"><img src=<?="/src/rooms/".$folder['folderName']."/".$sliderImg?>></li>
 			<?endforeach;?>	
 			</ul>
 			<div class="rooms__buttons">

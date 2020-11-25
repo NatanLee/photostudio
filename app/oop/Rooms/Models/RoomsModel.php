@@ -11,7 +11,7 @@ class RoomsModel
 			$roomName = "Отсутствует файл roomName.txt";	
 				foreach ($files as $j => $file) {
 					if (fnmatch("roomName.txt", $file)) {
-						$roomName = file_get_contents("./src/rooms/".$folder."/".$file);					
+						$roomName = file_get_contents("src/rooms/".$folder."/".$file);					
 					}
 					if (fnmatch("*.txt", $file)) {
 						unset($files[$j]);					
@@ -28,13 +28,14 @@ class RoomsModel
 	}
 //получить файлов из папки		
 	public function getRoomImages($folderName){
-		$files = array_slice(scandir('src/rooms/'.$folderName),2);			
+		$files = array_slice(scandir('src/rooms/'.$folderName),2);	
+//var_dump($folderName);		
 		$roomName = "Отсутствует файл roomName.txt";
 		$filesArray = [];
 		$counter = 0;
 		foreach ($files as $j => $file) {
 			if (fnmatch("roomName.txt", $file)) {
-				$roomName = file_get_contents("./src/rooms/".$folderName."/".$file);
+				$roomName = file_get_contents("src/rooms/".$folderName."/".$file);
 			}
 			if (fnmatch("*.txt", $file)) {
 				unset($files[$j]);

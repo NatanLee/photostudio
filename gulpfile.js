@@ -80,7 +80,7 @@ function startwatch() {
 function styles() {
 		return src('app/' + preprocessor + '/style.' + preprocessor + '') // Выбираем источник: "app/sass/main.sass" или "app/less/main.less"
 		.pipe(eval(preprocessor)()) // Преобразуем значение переменной "preprocessor" в функцию
-		.pipe(concat('app.min.css')) // Конкатенируем в файл app.min.js
+		.pipe(concat('style.min.css')) // Конкатенируем в файл app.min.js
 		.pipe(autoprefixer({ overrideBrowserslist: ['last 10 versions'], grid: true })) // Создадим префиксы с помощью Autoprefixer
 		.pipe(cleancss( { level: { 1: { specialComments: 0 } }/* , format: 'beautify' */ } )) // Минифицируем стили
 		.pipe(dest('app/css/')) // Выгрузим результат в папку "app/css/"
@@ -131,4 +131,4 @@ exports.cleanimg = cleanimg;
 exports.build = series(cleandist, styles, scripts, images, buildcopy);
 
 // Экспортируем дефолтный таск с нужным набором функций
-exports.default = parallel(styles, scripts, browsersync, startwatch);
+exports.default = parallel(styles, /* scripts,  */browsersync, startwatch);

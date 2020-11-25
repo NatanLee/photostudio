@@ -28,12 +28,12 @@
 	</footer>
 	
 
-	<script	src="js/slider.js"></script>
+	<script	src="/js/slider.js"></script>
 	<!-- <script	src="js/slimSliderHtml.js"></script>
 	<script	src="js/slimSliderStart.js"></script>
 	<script	src="js/loadScript.js"></script> -->
-	<script	src="js/simSlider2ver.js"></script>	
-	<script	src="js/toggleElements.js"></script>	
-	<script	src="js/popup.js"></script>	
+	<script	src="/js/simSlider2ver.js"></script>	
+	<script	src="/js/toggleElements.js"></script>	
+	<script	src="/js/popup.js"></script>	
 </body>
 </html>

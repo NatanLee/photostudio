@@ -2,7 +2,7 @@
 if(document.getElementById('bigSlider')){
 	//ajax получаем картинки	
 	let xhr = new XMLHttpRequest();
-	xhr.open('GET', './slider.php?bigSlider');
+	xhr.open('GET', '/slider.php?bigSlider');
 	xhr.responseType = 'json';
 	xhr.send();	
 	xhr.onload = function() {

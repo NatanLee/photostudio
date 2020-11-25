@@ -3,7 +3,7 @@
 	<h3 class = "one-room__gallery">Фотогалерея</h3>
 	<div class = "one-room__images">
 	<?foreach($room['roomImages'] as $image):?>
-		<img class = "one-room__one-image" src="./src/rooms/<?=$room['folderName']?>/<?=$image?>">
+		<img class = "one-room__one-image" src="/src/rooms/<?=$room['folderName']?>/<?=$image?>">
 	<?endforeach;?>	
 	</div>
 	<button class = "one-room__button">Показать все фотографии</button>

@@ -15,9 +15,7 @@ class RoomsController extends BaseController
 		parent::__construct();
 		
 		$this->errors = [];
-		
-		
-				
+					
 	}
 //получить список всех
 	public function getRooms(){
@@ -29,10 +27,11 @@ class RoomsController extends BaseController
 		]);	
 	}
 	
-	public function getOneRoom(){		
+	public function getOneRoom($folderName){		
+		//var_dump($folderName);
 		$mRoomsModel = new RoomsModel();
-		$room = $mRoomsModel->getRoomImages($this->get['room_details']);
-//var_dump($room);
+		$room = $mRoomsModel->getRoomImages($folderName);
+//var_dump($_SERVER['DOCUMENT_ROOT']);
 		echo $this->fullRender('oop/Rooms/Views/Room.html.php',[
 			'title'=>'Зал для фотосессии "'.$room['roomName'].'"',
 			'room'=>$room

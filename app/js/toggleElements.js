@@ -1,6 +1,6 @@
 "use strict";
 
-//для элемента меню
+//тогл для элемента. управляющий элемент должен иметь класс toggleMenu и класс скрытого элемента в порядке  0 и 1. скрываемый элемент должен иметь ид, который прописан в классе управляющего элемента
 function HideSubmenu(selector){
 	this.body = document.querySelector('body');
 	this.activeButton = document.querySelector(`.${selector}`);

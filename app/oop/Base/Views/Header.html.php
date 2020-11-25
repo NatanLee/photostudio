@@ -5,9 +5,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	
-	<link href="css/normalize.css" rel="stylesheet">
-	<link rel="stylesheet" href="./src/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-	<link href="css/style.css" rel="stylesheet">	
+	<link href="/css/normalize.css" rel="stylesheet">
+	<link rel="stylesheet" href="/src/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+	<link href="/css/style.min.css" rel="stylesheet">	
 	<title><?=$title?></title>
 </head>
 <body>
@@ -26,8 +26,7 @@
 				</p>
 			</div>
 			<div class = "firstLine__logo">
-				<div>фото</div>
-				<div>студия</div>
+				<div>фотостудия</div>				
 			</div>
 			<div class = "firstLine__networks">
 				<button><a class="instagram" href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></button>
@@ -38,11 +37,11 @@
 		</div>
 		<div class = "menu">
 			<ul>
-				<li><a href = "index.php">Главная</a></li>
+				<li><a href = "/">Главная</a></li>
 				<li class = "toggleMenu toggledMenu1"><a href="#">Аренда</a>
 					<ul class = "hidden" id = "toggledMenu1">						
-						<li><a href = "/prices">Стоимость</a></li>
-						<li><a href = "/allrooms">Залы</a></li>
+						<li><a href = "/price">Стоимость</a></li>
+						<li><a href = "/rooms">Залы</a></li>
 						<li><a href = "#">Оборудование</a></li>
 						<li><a href = "#">Правила</a></li>
 						<li><a href = "#">Акции</a></li>
